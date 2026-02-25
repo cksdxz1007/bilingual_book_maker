@@ -510,7 +510,7 @@ So you are close to reaching the limit. You have to choose your own value, there
         language = LANGUAGES.get(language, language)
 
     # change api_base for issue #42
-    model_api_base = options.api_base
+    model_api_base = options.api_base or env.get("BBM_OPENAI_API_BASE")
 
     if options.ollama_model and not model_api_base:
         # ollama default api_base
